@@ -54,9 +54,6 @@ module.exports = {
     if (!user) return
     return user.name
   },
-  'http-version': function (o) {
-    return o.res.header.substr(0, 8).split('/')[1]
-  },
   'user-agent': function (o) {
     return o.req.headers['user-agent']
   },
