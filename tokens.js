@@ -63,10 +63,10 @@ module.exports = {
   },
   res: function (o, field) {
     if (!field) return
-    var headers = o._lastResHeaders || o.res.header.split(/\\r\\n|\r\n|:/)
+    var headers = o._lastResHeaders || o.res.headers
     o._lastResHeaders = headers
-    var index = headers.indexOf(field) + 1
-    if (!index) return
-    return headers[index].trim()
+    var value = headers[field]
+    if (!value) return
+    return value.toString().trim()
   }
 }
